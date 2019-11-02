@@ -38,7 +38,7 @@ for count in range(1, repeat):
 
     # edit weight here
     randomList = random.choices(
-        sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 35, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
+        sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 5, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
     # randomList = random.choices(
     #     sampleList, weights=(165, 5, 25, 30, 35), k=5)
 

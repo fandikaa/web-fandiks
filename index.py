@@ -34,25 +34,19 @@ def commit(dayStart, dayEnd, randomList):
         os.system('git push origin master')
 
 
-for count in range(0, repeat):
+for count in range(1, repeat):
 
     # edit weight here
     # randomList = random.choices(
     #     sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 35, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
     randomList = random.choices(
         sampleList, weights=(165, 5, 25, 30, 35), k=5)
+
     print("count: " + str(count) + "randomList: " + str(randomList))
 
-    # first day
-    if(count == 0):
-        dayStart = dayInitial
-        dayEnd = dayInitial + randomList.__len__()
-        # start commit
-        commit(dayStart, dayEnd, randomList)
-    # repeat
-    else:
-        dayStart = dayInitial + randomList.__len__()
-        print("start from " + str(dayStart))
-        dayEnd = dayStart + randomList.__len__()
-        # start commit
-        commit(dayStart, dayEnd, randomList)
+    dayStart = dayInitial + (randomList.__len__() * count) 
+    print("start from " + str(dayStart))
+    dayEnd = dayStart + randomList.__len__()
+    print("end to " + str(dayEnd))
+    # start commit
+    commit(dayStart, dayEnd, randomList)

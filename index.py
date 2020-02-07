@@ -3,8 +3,9 @@ from random import randint
 import random
 
 # initiate commits per day and its weight  
-sampleList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-dayInitial = 900
+# sampleList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+sampleList = [0, 1, 2, 3, 4]
+dayInitial = 950
 repeat = 5
 
 def commit(dayStart, dayEnd, randomList):
@@ -36,8 +37,10 @@ def commit(dayStart, dayEnd, randomList):
 for count in range(0, repeat):
 
     # edit weight here
+    # randomList = random.choices(
+    #     sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 35, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
     randomList = random.choices(
-        sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 35, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
+        sampleList, weights=(165, 5, 25, 30, 35), k=5)
     print("count: " + str(count) + "randomList: " + str(randomList))
 
     # first day

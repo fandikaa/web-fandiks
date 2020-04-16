@@ -9,10 +9,15 @@ repeat = 5
 
 def commit(dayStart, dayEnd, randomList):
      # main program
+    commitCounter = 0
     for i in range(dayStart, dayEnd):
+        
+        commitCounter =+ 1
+
         print("day start: " + str(dayStart))
         print("day end: " + str(dayEnd))
         print("day: " + str(i))
+        print("counting" + str(commitCounter))
         print(randomList)
         arrayIndex = i - dayStart
 

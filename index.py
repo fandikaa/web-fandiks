@@ -4,7 +4,7 @@ import random
 
 # initiate commits per day and its weight  
 sampleList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-dayInitial = 800
+dayInitial = 850
 repeat = 5
 
 def commit(dayStart, dayEnd, randomList):
@@ -15,6 +15,8 @@ def commit(dayStart, dayEnd, randomList):
         print("day: " + str(i))
         print(randomList)
         arrayIndex = i - dayStart
+
+        # commit each day
         for j in range(0, randomList[arrayIndex]):
             d = str(i) + 'days ago'
             with open('file.txt', 'a') as f:

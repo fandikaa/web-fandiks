@@ -25,6 +25,8 @@ def commit(dayStart, dayEnd, randomList):
 
 
 for count in range(0, repeat):
+
+    # edit weight here
     randomList = random.choices(
         sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 35, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
     print("count: " + str(count) + "randomList: " + str(randomList))

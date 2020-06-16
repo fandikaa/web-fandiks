@@ -34,12 +34,12 @@ for count in range(0, repeat):
     if(count == 0):
         dayStart = dayInitial
         dayEnd = dayInitial + randomList.__len__()
+        # start commit
         commit(dayStart, dayEnd, randomList)
     # repeat
     else:
         dayStart = dayInitial + randomList.__len__()
         print("start from " + str(dayStart))
         dayEnd = dayStart + randomList.__len__()
-
         # start commit
         commit(dayStart, dayEnd, randomList)

@@ -35,9 +35,8 @@ for count in range(0, repeat):
         dayStart = dayInitial
         dayEnd = dayInitial + randomList.__len__()
         commit(dayStart, dayEnd, randomList)
-
     # repeat
-    if(count != 0):
+    else:
         dayStart = dayInitial + randomList.__len__()
         print("start from " + str(dayStart))
         dayEnd = dayStart + randomList.__len__()

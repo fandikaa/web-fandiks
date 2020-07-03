@@ -5,25 +5,15 @@ import random
 # initiate commits per day and its weight  
 sampleList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
-dayInitial = 750
-repeat = 10
+dayInitial = 800
+repeat = 5
 
-for count in range(0, repeat):
-    randomList = random.choices(
-        sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 35, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
-    print("count: " + str(count) + "randomList: " + str(randomList))
-
-    dayStart = dayInitial
-    dayEnd = dayStart + randomList.__len__()
-
-    # repeat preparation
-    if(count != 0):
-        dayStart = dayInitial + randomList.__len__()
-        print("start from " + str(dayStart))
-        dayEnd = dayStart + randomList.__len__()
-
-    # main program
+def commit(dayStart, dayEnd, randomList):
+     # main program
     for i in range(dayStart, dayEnd):
+        print("day start: " + str(dayStart))
+        print("day end: " + str(dayEnd))
+        print("day: " + str(i))
         print(randomList)
         arrayIndex = i - dayStart
         for j in range(0, randomList[arrayIndex]):
@@ -33,3 +23,24 @@ for count in range(0, repeat):
             os.system('git add .')
             os.system('git commit -m "commit" --date="' + d + '"')
         os.system('git push origin master')
+
+
+for count in range(0, repeat):
+    randomList = random.choices(
+        sampleList, weights=(165, 5, 25, 30, 35, 35, 35, 35, 15, 15, 25, 15, 5, 5, 3, 3, 5), k=17)
+    print("count: " + str(count) + "randomList: " + str(randomList))
+
+    # first day
+    if(count == 0):
+        dayStart = dayInitial
+        dayEnd = dayInitial + randomList.__len__()
+        commit(dayStart, dayEnd, randomList)
+
+    # repeat
+    if(count != 0):
+        dayStart = dayInitial + randomList.__len__()
+        print("start from " + str(dayStart))
+        dayEnd = dayStart + randomList.__len__()
+
+        # start commit
+        commit(dayStart, dayEnd, randomList)

@@ -14,13 +14,10 @@ dayStart = 600
 dayEnd = dayStart + randomList.__len__()
 
 for i in range(dayStart, dayEnd):
-    # print(randomList)
+    print(randomList)
     arrayIndex = i - dayStart
     for j in range(0, randomList[arrayIndex]):
-        # print(randomList[arrayIndex])
-        # print(j)
         d = str(i) + 'days ago'
-        # print(d)
         with open('file.txt', 'a') as f:
             f.write(d)
         os.system('git add .')

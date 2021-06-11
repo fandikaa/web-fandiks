@@ -11,7 +11,7 @@ randomList = random.choices(
 # print(randomList)
 
 
-for i in range(450, 463):
+for i in range(460, 473):
     for j in range(0, sampleList[15]):
         d = str(i) + 'days ago'
         with open('file.txt', 'a') as f:

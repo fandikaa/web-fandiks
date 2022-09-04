@@ -1,14 +1,14 @@
 import os
 from random import randint
 
-for i in range(1, 10, randint(0, 1)):
-    for j in range(0, randint(0, 10)):
+for i in range(10, 15):
+    for j in range(0, randint(0, 5)):
         d = str(i) + 'days ago'
         with open('file.txt', 'a') as f:
             f.write(d)
         os.system('git add .')
         os.system('git commit -m "commit" --date="' + d + '"')
-        os.system('git push origin master')
+    os.system('git push origin master')
 
 
 
